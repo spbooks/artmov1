@@ -1,0 +1,448 @@
+/*
+	*
+	*	F2fw 3.0.1 (http://f2fw.com)
+	*
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strong,sub,sup,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{vertical-align:baseline;font-family:inherit;font-size:100%;outline:0;border:0;margin:0;padding:0;}html{overflow-y:scroll;}body{font:normal 12px/18px Arial, sans-serif;background:#FFF;}#wrapper,#container{text-align:left;width:1024px;margin:0 auto;}#header{display:block;width:100%;}#logo h3{line-height:54px;font-size:25px;margin:0;}#logo h3.incl a{background:url(../images/logo.png) no-repeat 0 0;text-indent:-9999px;display:block;line-height:0;}#menu ul li{list-style-position:outside;list-style-type:none;display:block;float:left;margin:0 10px 0 0;}#menu ul li:last-of-type{margin-right:0;}.nf{float:none;}.cl{clear:both;}.cf:after{visibility:hidden;display:block;content:"";clear:both;height:0;}.cf{display:inline-block;}.al{text-align:left;}.ar{text-align:right;}.ac{text-align:center;}.ma{margin:0 auto;}.nmt{margin-top:0 !important;}.nmr{margin-right:0 !important;}.nmb{margin-bottom:0 !important;}.nml{margin-left:0 !important;}.nb{border:0 !important;}.nbt{border-top:none !important;}.nbr{border-right:none !important;}.nbb{border-bottom:none !important;}.nbl{border-left:none !important;}.p{padding:10px;}.np{padding:0 !important;}.npt{padding-top:0 !important;}.npr{padding-right:0 !important;}.npb{padding-bottom:0 !important;}.npl{padding-left:0 !important;}img.fl{margin:7px 15px 5px 0;}img.fr{margin:7px 0 5px 15px;}a.btt,span.btt,input.btt,a.ico,span.ico,input.ico,a.arr,span.arr,input.arr{color:transparent !important;text-indent:-9999px;overflow:hidden;cursor:pointer;display:block;line-height:0;font-size:0;border:0;}a.btt,span.btt,input.btt{background:url(../images/btt.png) no-repeat 0 0;}a.ico,span.ico,input.ico{background:url(../images/ico.png) no-repeat 0 0;}a.arr,span.arr,input.arr{background:url(../images/arr.png) no-repeat 0 0;}a:link{text-decoration:underline;color:#00e;}a:visited{color:#551a8b;}a:hover{text-decoration:none;color:#00F;}a:active{color:red;}h1,h2,h3,h4,h5,h6{font-weight:700;color:#000;margin:0 0 18px;}h1{line-height:36px;font-size:30px;}h2{line-height:36px;font-size:25px;}h3{line-height:36px;font-size:20px;}h4{line-height:18px;font-size:17px;}h5{line-height:18px;font-size:15px;}h6{line-height:18px;font-size:13px;}p{line-height:18px;font-size:12px;color:#000;margin:0 0 18px;}small{font-size:80%;}sup,sub{position:relative;font-size:75%;line-height:0;color:#777;}sup{top:-0.5em;}sub{bottom:-0.5em;}ul,ol{margin:0 0 0 10px;padding:0 10px 18px 5px;}ul li{list-style-type:disc;}ol li{list-style-type:decimal;}ul li,ol li{list-style-position:outside;color:#333;margin:0 0 18px;}ul li ul,ol li ol{padding:0 10px;}ul li ul li,ol li ol li{color:#555;margin:0;}ul.nostyle li,ol.nostyle li{list-style-type:none;}pre{font:normal 14px/18px Courier New, Arial, sans-serif;border:1px solid #CCC;background:#F9F9F9;white-space:0 !important;word-wrap:break-word;display:block;margin:0 0 18px;padding:8px 10px;}address{font-style:normal;line-height:18px;font-size:12px;color:#555;margin:0 0 18px;}abbr{border-bottom:1px dotted #777;cursor:help;}blockquote{font:normal 16px/21px Georgia, serif;color:#666;margin:0 0 18px;padding:0 50px;}blockquote p{line-height:18px;font-size:16px;color:#666;}blockquote p.author{line-height:18px;font-size:14px;color:#999;margin:0;}hr{background:#CCC;width:100%;height:1px;border:0;margin:0 0 18px;}table{border-collapse:collapse;line-height:18px;width:100%;margin:0 0 18px;}table th,table td{border:1px solid #CCC;vertical-align:middle;padding:10px;}table th{font-weight:700;background:#EEE;}div.c2 div.c21,div.c2 div.c22{width:49%;}div.c3 div.c31,div.c3 div.c32{margin-right:2%;float:left;width:32%;}div.c3 div.c33{float:left;width:32%;}div.c4 div.c41,div.c4 div.c42,div.c4 div.c43{margin-right:2%;width:23.5%;float:left;}div.c4 div.c44{width:23.5%;float:left;}div.c5 div.c51,div.c5 div.c52,div.c5 div.c53,div.c5 div.c54{margin-right:2%;width:18.4%;float:left;}div.c5 div.c55{width:18.4%;float:left;}div.c6 div.c61,div.c6 div.c62,div.c6 div.c63,div.c6 div.c64,div.c6 div.c65{margin-right:2%;float:left;width:15%;}div.c6 div.c66{float:left;width:15%;}div.breadcrumbs,div.pagination,div.tabs,div.jump{margin:0 0 18px;}div.breadcrumbs p span.sep{color:#888;}div.breadcrumbs p span.current{color:#333;}div.tabs div.tabs-n ul{display:block;margin:0;padding:0;}div.tabs div.tabs-n ul li{list-style-position:outside;list-style-type:none;background:#EEE;display:block;float:left;margin:0;}div.tabs div.tabs-n ul li a{border:1px solid #CCC;margin-right:-1px;display:block;padding:7px 10px;}div.tabs div.tabs-n ul li.active{background:#FFF;}div.tabs div.tabs-n ul li.active a{border-bottom:1px solid #FFF;}div.tabs div.tabs-c{border:1px solid #CCC;margin-top:-1px;padding:15px 15px 0;}div.jump p{font-size:11px;color:#444;margin:0;}div.pagination ul li{list-style-position:outside;list-style-type:none;display:block;float:left;margin:0;}div.pagination ul li.page{font-size:11px;color:#777;margin:0 20px 0 0;}div.pagination ul li.ext{font:normal bold 12px/20px Arial, sans-serif;}div.pagination ul li a{margin:0 2px;padding:4px;}div.pagination ul li.active a{color:#c70c27;}div.notifications div.inform,div.notifications div.success,div.notifications div.warning,div.notifications div.error{margin:0 0 15px;}div.notifications div.inform{border:1px solid #00529B;background:#BDE5F8;}div.notifications div.success{border:1px solid #72C765;background:#DFF2BF;}div.notifications div.warning{border:1px solid #CCC;background:#FEFBF3;}div.notifications div.error{border:1px solid #D8000C;background:#FFBABA;}div.notifications p{line-height:20px;font-size:14px;margin:0;padding:10px;}div.notifications p.title{text-transform:uppercase;font-weight:700;padding:10px 10px 0;}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,div.c2,div.c3,div.c4,div.c5,div.c6{display:block;}#logo,.fl,div.c2 div.c21{float:left;}#menu,.fr,div.c2 div.c22{float:right;}#menu ul,ul.nostyle,ol.nostyle,div.pagination ul{margin:0;padding:0;}ul li:last-child,ol li:last-child,pre:last-child,blockquote :last-child,div.breadcrumbs p{margin:0;}
+
+/*
+	*
+	*	Start
+	*
+*/
+body {
+	background:#FFF;
+}
+div.container {
+	margin:0 auto;		/* make the content centered */
+	width:1000px;		/* the width of Monoplate content container */
+}
+
+/*
+	*
+	*	Icons
+	*
+*/
+a.ico-facebook,
+a.ico-twitter {
+	height:16px;		/* height of social icons */
+	width:16px;			/* width of social icons */
+}
+a.ico-facebook {
+	background-position:0 0;		/* position of Facebook in ico.png */
+}
+a.ico-twitter {
+	background-position:-16px 0;	/* position of Twitter in ico.png */
+}
+
+/*
+	*
+	*	Arrows
+	*
+*/
+span.ico-arr-left,
+span.ico-arr-right {
+	height:19px;
+	width:12px;
+}
+span.ico-arr-left {
+	background-position:0 -16px;		/* position of the left arrow in ico.png - used in #hello */
+}
+span.ico-arr-right {
+	background-position:-12px -16px;	/* position of the right arrow in ico.png - used in #hello */
+}
+
+/*
+	*
+	*	#albums icons
+	*
+*/
+span.ico-more {
+	background-position:0 -35px;	/* position of more icon in ico.png - used in #albums */
+	height:11px;
+	width:11px;
+}
+
+/*
+	*
+	*	#blog icons
+	*
+*/
+span.ico-date {
+	background-position:-11px -35px;	/* position of date icon in ico.png - used in #blog */
+	height:16px;
+	width:16px;
+}
+span.ico-tags {
+	background-position:-27px -35px;	/* position of tag icon in ico.png - used in #blog */
+	height:16px;
+	width:16px;
+}
+span.ico-comments {
+	background-position:-43px -35px;	/* position of comment icon in ico.png - used in #blog */
+	height:16px;
+	width:16px;
+}
+
+/*
+	*
+	*	Buttons
+	*
+*/
+a.btn {
+	background:url(../images/btn.png) repeat-x top left;
+	-webkit-box-shadow:0 0 3px #CCC;
+	-moz-box-shadow:0 0 3px #CCC;
+	box-shadow:0 0 3px #CCC;
+	border:1px solid #90c8d4;
+	padding:4px 10px;
+	font:normal bold 14px/21px Arial, sans-serif;
+	text-shadow:0 1px 0 #FFF;
+	text-decoration:none;
+	color:#5e9ba8;
+}
+a.btn:hover {
+	background-position:bottom left;
+	color:#3b636b;
+}
+
+/*
+	*
+	*	Top
+	*
+*/
+#top {
+	background:url(../images/top.png) repeat-x bottom left;		/* adding the background pictured repeated from left to right */
+}
+#top p {
+	font:normal 14px/18px "Marvel", Arial, sans-serif;		/* enable the custom font */
+	padding:12px 0;											/* top and bottom space */
+	margin:0;												/* disable any margin */
+}
+#top p a {
+	text-decoration:none;	/* disable the underline */
+	margin:0 20px 0 0;		/* adding margin between the links */
+	color:#a0a0a0;			/* set a different color for the links */
+}
+#top p a:hover {
+	text-decoration:underline;		/* enable the underline */
+	color:#000;						/* set a different color when :hover state is active */
+}
+#top p a.ico {
+	opacity:0.4;		/* set the opacity to 40% */
+}
+#top p a.ico:hover {
+	opacity:1;			/* set the opacity to 100% */
+}
+
+/*
+	*
+	*	Header
+	*
+*/
+#header {
+	background:rgb(51,51,51);
+	background:-moz-linear-gradient(top, rgb(51,51,51) 0%, rgb(0,0,0) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(51,51,51)), color-stop(100%, rgb(0,0,0)));
+	background:-webkit-linear-gradient(top, rgb(51,51,51) 0%, rgb(0,0,0) 100%);
+	background:-o-linear-gradient(top, rgb(51,51,51) 0%, rgb(0,0,0) 100%);
+	background:-ms-linear-gradient(top, rgb(51,51,51) 0%, rgb(0,0,0) 100%);
+	background:linear-gradient(top, rgb(51,51,51) 0%, rgb(0,0,0) 100%);
+	margin:0;		/* disable F2fw’s default 36px bottom margin */
+}
+#logo h3.incl a {
+	height:51px;	/* height of Monoplate logo */
+	width:182px;	/* width of Monoplate logo */
+}
+#menu {
+	line-height:0; /* remove unwanted space caused by a children with clearfix */
+}
+#menu ul {
+	padding:13px 0; /* create space between the top and bottom edges of links */
+}
+#menu ul li {
+	font:normal 20px/25px "Marvel", Arial, sans-serif;		/* set the custom font */
+	text-transform:uppercase;								/* uppercase all text from CSS */
+	margin:0 30px 0 0;										/* create space between the right and left edges of links */
+}
+#menu ul li a {
+	text-decoration:none;		/* disable the underline style */
+	color:#b9b9b9;				/* change the color of each anchor */
+}
+#menu ul li.active a,
+#menu ul li a:hover {
+	text-decoration:underline;		/* enable the underline style */
+	color:#FFF;						/* change the color differently */
+}
+
+/*
+	*
+	*	Page
+	*
+*/
+#page {
+	background:rgb(92,168,186);		/* this is the fallback solid color */
+	background:-moz-linear-gradient(top, rgb(92,168,186) 0%, rgb(223,246,234) 55%, rgb(255,255,255) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(92,168,186)), color-stop(55%, rgb(223,246,234)), color-stop(100%,rgb(255,255,255)));
+	background:-webkit-linear-gradient(top, rgb(92,168,186) 0%, rgb(223,246,234) 55%, rgb(255,255,255) 100%);
+	background:-o-linear-gradient(top, rgb(92,168,186) 0%, rgb(223,246,234) 55%, rgb(255,255,255) 100%);
+	background:-ms-linear-gradient(top, rgb(92,168,186) 0%, rgb(223,246,234) 55%, rgb(255,255,255) 100%);
+	background:linear-gradient(top, rgb(92,168,186) 0%, rgb(223,246,234) 55%, rgb(255,255,255) 100%);
+	border-top:1px solid #74b7c3;
+	padding:49px 0 0 0;
+}
+#page div.container {
+	border-top:3px solid #367d8d;	/* add the content's top bar */
+	background:#FFF;				/* add a  background color to have the content displayed on a white background */
+}
+#page div.content {
+	padding:22px 25px;		/* add the space between the #page div.container edges and actual content */
+}
+
+/*
+	*
+	*	Page: p.category
+	*
+*/
+#page p.category {
+	background:#f1f1f1;		/* set the background color */
+	height:18px;			/* set the height */
+	width:100%;				/* make it a 100% width */
+}
+#page p.category a {
+	background:rgb(255,255,255);
+	background:-moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(244,244,244) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(255,255,255)), color-stop(100%, rgb(244,244,244)));
+	background:-webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(244,244,244) 100%);
+	background:-o-linear-gradient(top, rgb(255,255,255) 0%, rgb(244,244,244) 100%);
+	background:-ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(244,244,244) 100%);
+	background:linear-gradient(top, rgb(255,255,255) 0%, rgb(244,244,244) 100%);
+	padding:6px 15px 5px 15px;					/* create the space around the text */
+	border:1px solid #e7e7e7;					/* add the border */
+	font:normal 11px/16px Arial, sans-serif;	/* set the font size */
+	text-shadow:0 2px 0 #FFF;					/* add the drop shadow effect on the text */
+	text-decoration:none;						/* disable the underline */
+	margin:0 0 0 17px;							/* move the text to the right */
+	color:#999;									/* change the default color */
+}
+#page p.category a:hover {
+	color:#000;
+}
+
+/*
+	*
+	*	Hello
+	*
+*/
+#hello {
+	border-bottom:1px dotted #d2d2d2;	/* set the dotted bottom line */
+	padding:0 0 25px 0;					/* add the bottom padding */
+	margin:0 0 25px 0;					/* add the bottom margin */
+}
+
+/*
+	*
+	*	Hello: article
+	*
+*/
+#hello div.article h2 {
+	font:normal 25px/33px "Marvel", Arial, sans-serif;	/* set the custom font */
+}
+#hello div.article p {
+	font:normal 14px/23px Arial, sans-serif;	/* set the font and size */
+	color:#777;									/* change the default color */
+}
+#hello p.buttons {
+	margin:0;		/* disable the default bottom margin */
+}
+#hello p.buttons a {
+	margin:0 20px 0 0;		/* create the space between the buttons */
+}
+
+/*
+	*
+	*	Hello: slider
+	*
+*/
+#hello div.slider {
+	position:relative;
+}
+#hello div.slider p {
+	margin:0;
+}
+#hello div.slider p.thumbnail img {
+	display:block;
+}
+#hello div.slider p.navigation {
+	position:absolute;
+	right:15px;
+	top:20px;
+}
+#hello div.slider p.navigation a.btn {
+	border-color:#b9b9b9;
+	background-color:#FFF;
+	background-position:-100px -100px;
+	padding:3px 6px;
+	display:block;
+	float:left;
+	margin:0 5px 0 0;
+}
+#hello div.slider p.navigation a.btn:hover {
+	border-color:#858585;
+	background-position:-25px 0;
+}
+#hello div.slider p.navigation a.btn span.ico {
+	opacity:0.4;
+}
+#hello div.slider p.navigation a.btn:hover span.ico {
+	opacity:1;
+}
+
+/*
+	*
+	*	Albums
+	*
+*/
+#albums {
+	border-bottom:1px dotted #d2d2d2;
+	margin:0 0 25px 0;
+}
+#albums ul {
+	padding:0;
+}
+#albums ul li {
+	margin:0 24px 0 0;
+	display:block;
+	width:219px;
+	float:left;
+}
+#albums ul li p {
+	margin:0;
+}
+
+/*
+	*
+	*	Albums: thumbnail
+	*
+*/
+#albums li p.thumbnail {
+	padding:0 0 20px 0;
+	position:relative;
+	background:#EEE;
+}
+#albums li p.thumbnail:before {
+	position:absolute;
+	background:#FFF;
+	height:24px;
+	width:100%;
+	content:'';
+	left:0;
+	top:0;
+}
+#albums li p.thumbnail img {
+	border:1px solid #FFF;
+	position:relative;
+	display:block;
+	margin:0 auto;
+	z-index:1;
+}
+
+/*
+	*
+	*	Albums: content
+	*
+*/
+#albums li p.content {
+	font:normal bold 18px/21px "Marvel", Arial, sans-serif;
+	text-align:center;
+	padding:20px 0;
+	margin:0;
+}
+#albums li p.content a {
+	color:#367d8d;
+}
+#albums li p.content a:hover {
+	color:#999;
+}
+#albums li p.content a span.ico {
+	display:inline-block;
+	margin:0 10px 0 0;
+	opacity:0.5;
+}
+#albums li p.content a:hover span.ico {
+	opacity:1;
+}
+
+/*
+	*
+	*	Blog
+	*
+*/
+#blog div.article {
+	padding:0 200px 0 17px;
+}
+#blog div.article h2 {
+	font:normal 30px/34px "Marvel", Arial, sans-serif;
+}
+#blog div.article p.post-data {
+	font:normal 12px/16px Arial, sans-serif;
+	color:#aaa;
+}
+#blog div.article p.post-data a {
+	margin:0 20px 0 0;
+	text-decoration:none;
+	color:#aaa;
+}
+#blog div.article p.post-data a:hover {
+	color:#000;
+}
+#blog div.article p.post-data a span.ico {
+	display:inline-block;
+	margin:0 5px 0 0;
+	position:relative;
+	top:3px;
+}
+#blog div.article p.post-content {
+	font:normal 16px/22px Arial, sans-serif;
+	color:#676767;
+}
+
+/*
+	*
+	*	Footer
+	*
+*/
+#footer {
+	border-top:3px solid #cdcdcd;
+	background:#efefef;
+}
+#footer div.content {
+	padding:25px;
+}
+#footer ul {
+	margin:0 50px 0 0;
+	float:left;
+}
+#footer ul li {
+	margin:0;
+}
+#footer ul li h6 {
+	font:normal 24px/29px "Marvel", Arial, sans-serif;
+	text-shadow:0 1px 0 #FFF;
+	text-transform:uppercase;
+	margin:0 0 5px 0;
+	color:#666;
+}
+#footer ul li p {
+	font:normal 18px/24px "Marvel", Arial, sans-serif;
+	color:#656565;
+	margin:0;
+}
+#footer ul li p a {
+	text-decoration:none;
+	color:#656565;
+}
+#footer ul li p a:hover {
+	text-decoration:underline;
+	color:#898989;
+}

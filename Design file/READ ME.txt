@@ -1,0 +1,12 @@
+The Monoplate design file uses a custom font, called "Marvel".
+
+You can download it for free from Google Web Fonts:
+http://www.google.com/webfonts#UsePlace:use/Collection:Marvel
+
+or simply install it from the "Custom font" directory
+Marvel-Regular.ttf
+
+More on the Marvel font:
+http://www.google.com/webfonts/specimen/Marvel
+
+You may need to install it before you open Monoplate.psd.

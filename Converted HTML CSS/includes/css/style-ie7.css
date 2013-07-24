@@ -1,0 +1,31 @@
+/*
+	*
+	*	F2fw 3.0.1 (http://f2fw.com)
+	*
+*/
+.cf{display:block;zoom:1;}
+
+/*
+	*
+	*	Start.
+	*
+*/
+#top p.fr {
+	width:52px;
+}
+#logo h3.incl {
+	height:51px;
+}
+a.btn,
+#page p.category a {
+	position:relative;
+}
+#albums li p.thumbnail {
+	padding-top:20px;
+}
+#footer {
+	zoom:1;
+}
+#blog div.article p.post-data a span.ico {
+	display:none;
+}
